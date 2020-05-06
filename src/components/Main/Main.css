@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+}
+
+.text {
+  z-index: 1;
+  position: absolute;
+  top: 38%;
+  color: white;
+  margin-left: 40px !important;
+}
+
+.text h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.text p {
+  font-size: 20px;
+}
+
+.inputbox {
+  width: 520px;
+  height: 57px;
+  background-color: white;
+}
+.inpt {
+  width: 470px;
+  height: 55px;
+  padding: 20px;
+  border-radius: 2px;
+  border: 0;
+}
+.inpt::placeholder {
+  font-size: 25px;
+}
+.search {
+  color: red;
+}
+.searchbtn {
+  width: 50px;
+  background-color: white;
+  height: 57px;
+  border: 0;
+}
+.searchbtn:hover {
+  background-color: #f55452;
+  color: white;
+}
+.search:hover {
+  color: white;
+}
