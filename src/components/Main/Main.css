@@ -50,3 +50,24 @@
 .search:hover {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .text p {
+    font-size: 13px;
+  }
+  .learnbtn {
+    height: 30px;
+    width: 150x;
+    margin-bottom: 10px;
+  }
+  .learnbtn h3 {
+    font-size: 15px;
+  }
+  .text {
+    top: 32%;
+  }
+}

@@ -8,7 +8,7 @@ function Header() {
     <div className="header">
       <nav className="navbar navbar-expand-sm fixed navbar-light  mb-3 py-0">
         <a href="/">
-          <img src={Logo} />
+          <img className="logoimg" src={Logo} />
         </a>
 
         <ul className="navbar-nav navlist mr-auto">

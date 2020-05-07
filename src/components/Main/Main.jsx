@@ -22,7 +22,7 @@ function Main() {
               expert-led courses now.{" "}
             </p>
             <Link to="/courses">
-              <button type="button" className="btn  btn-lg btn-danger">
+              <button type="button" className="btn learnbtn btn-lg btn-danger">
                 <h3>Start Learning</h3>
               </button>
             </Link>
