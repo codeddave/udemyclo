@@ -21,15 +21,27 @@ function Courses() {
   fetchInstructor();
 
   return (
-    <div className="courses">
-      <div className="card-deck">
+    <div className="courses" style={{ marginLeft: "120px" }}>
+      <div className="row">
         {instructors.map((instructor) => (
-          <div className="card" style={{ width: "18rem" }}>
+          <div
+            className="card"
+            style={{
+              maxWidth: "23rem",
+              marginBottom: "40px",
+              Height: "100px",
+            }}
+          >
             <img
               className="card-img-top"
               src={instructor.imageurl}
               alt="Card image cap"
-            ></img>
+              style={{
+                maxWidth: "23rem",
+                marginBottom: "40px",
+                Height: "100px",
+              }}
+            />
             <div className="card-body">
               <h5 className="card-title">{instructor.title}</h5>
               <p className="card-text"></p>
