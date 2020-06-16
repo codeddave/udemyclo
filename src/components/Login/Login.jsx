@@ -3,11 +3,13 @@ import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
 
 function Login(props) {
   const history = useHistory();
   const { Login, Logout } = props;
   const { sign } = props;
+  console.log(props);
   const responseGoogle = (response) => {
     console.log(response);
   };

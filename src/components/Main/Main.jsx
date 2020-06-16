@@ -1,5 +1,5 @@
 import React from "react";
-import Courses from "../Courses/Courses";
+
 import { Link } from "react-router-dom";
 
 import "./Main.css";

@@ -34,9 +34,7 @@ class App extends React.Component {
           <Header />
 
           <Switch>
-            <Route exact path="/" component={Main} />
             <Route
-              exact
               path="/login"
               component={() => (
                 <Login
@@ -46,21 +44,24 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route exact path="/courses" component={Courses} />
-            <Route exact path="/instructor" component={Instructor} />
-            {this.state.isLoggedIn === false ? (
-              <div>
-                <Login />
-              </div>
-            ) : (
-              <Main />
-            )}
-            <ProtectedRoute exact={true} path="/" component={Main} />
-            + <ProtectedRoute path="/courses" component={Courses} />
+            <ProtectedRoute
+              exact={true}
+              path="/"
+              component={Main}
+              sign={this.state.isLoggedIn}
+            />
+            +{" "}
+            <ProtectedRoute
+              exact={true}
+              path="/courses"
+              component={Courses}
+              sign={this.state.isLoggedIn}
+            />
             <ProtectedRoute
               exact={true}
               path="/instructor"
               component={Instructor}
+              sign={this.state.isLoggedIn}
             />
           </Switch>
         </div>
