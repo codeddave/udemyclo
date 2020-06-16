@@ -1,35 +1,49 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Login() {
+
+function Login(props) {
   const history = useHistory();
+  const { Login, Logout } = props;
+  const { sign } = props;
   const responseGoogle = (response) => {
     console.log(response);
-    history.push("/");
   };
   const logout = (data) => {
-    history.push("/");
     console.log(data);
   };
 
-  return (
-    <div>
+  const myLogout = () => {
+    history.push("/");
+  };
+  if (sign) {
+    return (
+      <GoogleLogout
+        clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+        buttonText="Logout"
+        onLogoutSuccess={() => {
+          Logout();
+          myLogout();
+        }}
+      ></GoogleLogout>
+    );
+  } else {
+    return (
       <GoogleLogin
         clientId="1019273393691-t75i6b2r9djp3mn20d4alv65iu8ml54c.apps.googleusercontent.com"
         buttonText="Log in with your google account"
-        onSuccess={responseGoogle}
+        onSuccess={() => {
+          Login();
+          myLogout();
+        }}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
         isSignedIn={true}
       />
-
-      <GoogleLogout
-        clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-        buttonText="Logout"
-        onLogoutSuccess={logout}
-      ></GoogleLogout>
-    </div>
-  );
+    );
+  }
 }
+
 export default Login;

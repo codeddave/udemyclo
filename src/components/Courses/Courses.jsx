@@ -37,9 +37,7 @@ function Courses() {
               src={instructor.imageurl}
               alt="Card image cap"
               style={{
-                maxWidth: "23rem",
-                marginBottom: "40px",
-                Height: "100px",
+                minHeight: "100px",
               }}
             />
             <div className="card-body">

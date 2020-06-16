@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import classnames from "classnames";
 import Logo from "../../teachudemy.jpg";
+import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
@@ -19,6 +20,9 @@ function Form() {
     title: "",
     description: " ",
   });
+
+  const history = useHistory();
+
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -104,6 +108,12 @@ function Form() {
       .catch((error) => {
         console.log(error);
       });
+    setinputData({
+      name: "",
+      title: "",
+      description: " ",
+    });
+    history.push("/");
   };
 
   return (
