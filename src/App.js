@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import Courses from "./components/Courses/Courses";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ProtectedRoute from "./components/Login/ProtectedRoute";
 
 import Instructor from "./components/Instructor/Instructor";
 
@@ -47,6 +48,20 @@ class App extends React.Component {
             />
             <Route exact path="/courses" component={Courses} />
             <Route exact path="/instructor" component={Instructor} />
+            {this.state.isLoggedIn === false ? (
+              <div>
+                <Login />
+              </div>
+            ) : (
+              <Main />
+            )}
+            <ProtectedRoute exact={true} path="/" component={Main} />
+            + <ProtectedRoute path="/courses" component={Courses} />
+            <ProtectedRoute
+              exact={true}
+              path="/instructor"
+              component={Instructor}
+            />
           </Switch>
         </div>
       </Router>
