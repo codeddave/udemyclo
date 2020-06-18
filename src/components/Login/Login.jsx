@@ -3,7 +3,6 @@ import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute";
 
 function Login(props) {
   const history = useHistory();
@@ -20,6 +19,7 @@ function Login(props) {
   const myLogout = () => {
     history.push("/");
   };
+
   if (sign) {
     return (
       <GoogleLogout
